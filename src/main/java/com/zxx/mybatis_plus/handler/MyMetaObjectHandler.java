@@ -13,7 +13,7 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
 
     @Override
     public void insertFill(MetaObject metaObject) {
-        log.info("start insert fill ....");
+        log.debug("start insert fill ....");
 
         // 判断age是否赋值
         Object age = this.getFieldValByName("age", metaObject);
