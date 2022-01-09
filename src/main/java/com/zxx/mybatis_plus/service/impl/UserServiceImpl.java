@@ -13,6 +13,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Override
     public List<User> listAllByName(String name) {
+        System.out.println("param :" + name);
         // baseMapper对象指向当前业务的mapper对象
         return baseMapper.selectAllByName("Helen");
     }
