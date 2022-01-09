@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zxx.mybatis_plus.mapper.UserMapper">
+
+    <sql id="Base_Column_List">
+        id, name, age, email,  create_time, update_time, is_deleted
+    </sql>
+
+    <select id="selectAllByName" resultType="com.zxx.mybatis_plus.entity.User">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where
+        name = #{name}
+    </select>
+
+    <select id="selectPageByPage" resultType="com.zxx.mybatis_plus.entity.User">
+        SELECT <include refid="Base_Column_List"/> FROM user WHERE age > #{age}
+    </select>
+</mapper>
